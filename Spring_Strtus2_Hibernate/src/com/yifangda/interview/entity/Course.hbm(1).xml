@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yifangda.interview.entity"  >
+	<class name="Course" table="T_COURSE" lazy="false">
+		<id name="id" column="ID">
+			<generator class="native"></generator>
+		</id>
+		<property name="name" column="NAME" length="50" unique="true" not-null="true"></property>
+		<property name="credit" column="CREDIT"  length="20" not-null="true"></property>
+		<set name="students" table="T_STUDENT_COURSE" >
+			<key column="COURSE_ID"/>
+			<many-to-many column="STUDENT_ID" class="Student"/>
+		</set>
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8" />  
+    <constant name="struts.devMode" value="true" />
+    <package name="struts2" namespace="/" extends="struts-default">
+        <action name="search" class="com.yifangda.interview.action.CourseCtl" >
+            <result name="success">/success.jsp</result>
+            <result name="failed">/failed.jsp</result>
+        </action>
+    </package>    
+</struts>
